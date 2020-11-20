@@ -13,7 +13,7 @@ function specialcharacter () {
 }
 
 //function for including lowercase 
-
+//function prompts
 function question () {
   lengthpass= parseInt(prompt('how many characters do you want your password to be'))
   specialchar = prompt('special characters? (y/n)?')
