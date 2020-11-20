@@ -3,49 +3,31 @@ var generateBtn = document.querySelector("#generate");
 //var lengthpass = question()
 
 // Q&A functions 
-//function for including uppercase
-//function for including special characters
-function specialcharacter () {
-  charspecial ='!@#$%^&*()_'
-  charset += charspecial
-  return charset;
 
-}
 
 //function for including lowercase 
+
+
 //function prompts
 function question () {
   lengthpass= parseInt(prompt('how many characters do you want your password to be'))
-  specialchar = prompt('special characters? (y/n)?')
-  uppercase= prompt('')
-   //password length check
-   if (lengthpass >= 8 && lengthpass <= 128) {
+  if (lengthpass >= 8 && lengthpass <= 128) {
     writePassword() 
-  } else if (lengthpass < 8 || lengthpass >128){
+  } else { 
     prompt('That password is invalid!') 
-  //} else if (specialchar == 'y') {
-    //specialcharacter()
-  //specialchar = prompt('Special characters? (y/n)')
-  //var specialchar= prompt('Special characters? (y/n)')
-  return lengthpass;
-} else if (specialchar == 'y') {
-  specialcharacter()
   }
-
-}
-
-
-//function for including special characters
+  
+  return lengthpass;
+} 
 
 
 
 //abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
 
-
 //generate password
 function generatePassword() {
   var length = lengthpass,
-      charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+      charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' 
       retVal = "";
   for (var i = 0, n = charset.length; i < length; ++i) {
       retVal += charset.charAt(Math.floor(Math.random() * n));
@@ -64,6 +46,20 @@ function writePassword() {
 
 }
 
+//function for including uppercase
+function uppercasechar () {
+  charuppercase ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  charset.append(charuppercase)
+
+}
+//function for including special characters
+function specialcharacter () {
+  charspecial ='!@#$%^&*()_'
+  charset.append(charspecial)
+ 
+
+}
+
 //btnPmpt.addEventListener = ('click', writePassword)
 
 // Add event listener to generate button
@@ -72,4 +68,3 @@ generateBtn.addEventListener('click', question)
 
 //lengthpass.onclick =  writePassword()
 //generateBtn.addEventListener("click", lengthpass)
-
