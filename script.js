@@ -13,7 +13,7 @@ function question () {
     specialQ = prompt('Do you want special characters? (y/n)')
     upper = prompt('do you want uppercase letters? (y/n)')
     lower = prompt('do you want lower case letters? (y/n)')
-    numsQ = prompt('do you want numbers?')
+    numsQ = prompt('do you want numbers? (y/n)')
     answer = specialQ + upper + lower + numsQ
     
 
