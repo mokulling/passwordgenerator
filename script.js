@@ -8,6 +8,7 @@ var nums = '0123456789'
 
 
 function question () {
+  //Prompting for each type of character
     combo = special + uppercase + lowercase + nums
     lengthpass= parseInt(prompt('how many characters do you want your password to be'))
     specialQ = prompt('Do you want special characters? (y/n)')
@@ -16,7 +17,7 @@ function question () {
     numsQ = prompt('do you want numbers? (y/n)')
     answer = specialQ + upper + lower + numsQ
     
-
+    //if statements on each type of character type
     if (answer.value == 'n') {
       charsetnew = combo - nocheck(true)
       writePassword()
