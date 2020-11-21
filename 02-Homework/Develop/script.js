@@ -15,7 +15,7 @@ function question () {
     lower = prompt('do you want lower case letters? (y/n)')
     numsQ = prompt('do you want numbers?')
     answer = specialQ + upper + lower + numsQ
-    noCheck = answer
+    
 
     if (answer.value == 'n') {
       charsetnew = combo - nocheck(true)
@@ -28,14 +28,27 @@ function question () {
     } else if (lengthpass < 8 || lengthpass > 128) {
       prompt('invalid!')
     } else if (specialQ == 'n' && upper == 'y' && lower == 'y' && numsQ == 'y') {
-      charsetnew = (combo - specialQ)
+      charsetnew = uppercase+lowercase+ nums
+      writePassword()
     } else if (upper == 'n' && lower == 'y' && numsQ =='y' && specialQ == 'y') {
       charsetnew = lowercase+ special + nums
-    } else if (lower =='n' && upper == 'y' && numsQ =='y' && specialQ == '') {
+      writePassword()
+    } else if (lower =='n' && upper == 'y' && numsQ =='y' && specialQ == 'y') {
       charsetnew = uppercase+special+nums
-    } else if (numsQ =='n') {
+      writePassword()
+    } else if (numsQ =='n' && upper=='y' && specialQ =='y' && lower== 'y') {
       charsetnew= special + uppercase + lowercase
-    }//finish rest of else ifs 
+    }else if (numsQ=='n' && upper =='n' && specialQ =='y' && lower=='y'){
+      charsetnew= special+lowercase
+      writePassword()
+    }else if (numsQ=='y' && upper =='y' &&specialQ =='n' && lower =='n'){
+      charsetnew=nums + uppercase
+      writePassword()
+    }else if (numsQ=='n' && upper =='y' &&specialQ =='y' && lower== 'n'){
+      charsetnew= uppercase+ special
+    } else {
+      prompt('Your password is invalid. Please try again')
+    }
     
       
       //else if (answer.value == 'n') {
@@ -44,19 +57,6 @@ function question () {
     
     }
     
-    
-
-
-        
-  
-
-
-
-
-
-
-//abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
-
 //generate password
 function generatePassword() {
   var length = lengthpass,
