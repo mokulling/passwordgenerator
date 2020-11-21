@@ -26,7 +26,7 @@ function question () {
       charsetnew = combo
       writePassword()
     } else if (lengthpass < 8 || lengthpass > 128) {
-      prompt('invalid!')
+      prompt('invalid length!')
     } else if (specialQ == 'n' && upper == 'y' && lower == 'y' && numsQ == 'y') {
       charsetnew = uppercase+lowercase+ nums
       writePassword()
@@ -46,6 +46,8 @@ function question () {
       writePassword()
     }else if (numsQ=='n' && upper =='y' &&specialQ =='y' && lower== 'n'){
       charsetnew= uppercase+ special
+    }else if (numsQ=='n' && upper =='n' &&specialQ =='n' && lower =='n'){
+      prompt('Please select at least one type of character')
     } else {
       prompt('Your password is invalid. Please try again')
     }
