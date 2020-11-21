@@ -21,7 +21,7 @@ function question () {
       charsetnew = combo - nocheck(true)
       writePassword()
     } 
-    // check for 
+    
     if (lengthpass >= 8 && lengthpass <= 128 && specialQ == 'y' && upper == 'y' && lower == 'y' && numsQ == 'y') {
       charsetnew = combo
       writePassword()
