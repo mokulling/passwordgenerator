@@ -1,24 +1,59 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//var lengthpass = question()
+var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var lowercase= 'abcdefghijklmnopqrstuvwxyz';
+var special = '!@#$%^&*()';
+var nums = '0123456789'
 
-// Q&A functions 
+var choices =['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz', '!@#$%^&*()', '0123456789'  ]
 
 
-//function for including lowercase 
-
-
-//function prompts
 function question () {
-  lengthpass= parseInt(prompt('how many characters do you want your password to be'))
-  if (lengthpass >= 8 && lengthpass <= 128) {
-    writePassword() 
-  } else { 
-    prompt('That password is invalid!') 
-  }
+    lengthpass= parseInt(prompt('how many characters do you want your password to be'))
+    specialQ = prompt('Do you want special characters? (y/n)')
+    upper = prompt('do you want uppercase letters? (y/n)')
+    //lower = prompt('do you want lower case letters? (y/n)')
+    //numsQ = prompt('do you want numbers?')
+    // check for 
+    if (lengthpass >= 8 && lengthpass <= 128 && specialQ == 'y' && upper == 'y') {
+      charsetnew = nums + upper
+      writePassword() 
+      console.log(charsetnew)
+    } 
+    else {
+      prompt('invalid!')
+    }
+    
+    /*if (specialchar == 'y') {
+      writePassword()
+    }else {
+      writePassword(), }*/
+
+        
   
-  return lengthpass;
-} 
+}
+    /*} else if (specialQ == 'y') { 
+      answers += answers.concat.choices[2]
+    } else if (upper == 'y') {
+      answers += answers.concat.choices[0]
+    } else if (lower == 'y') {
+      answers += answers.concat.choices[1]
+    } else if (numsQ == 'y'){
+      answers += answers.concat.choices[3]
+    } */
+
+
+//prompt('That password is invalid!') 
+/*function specialquestion () {
+  specialchar =prompt('would you like to add special characters? (y/n)')
+  if (specialchar == 'y'){
+    charsetnew=charset.concat(special)
+    writePassword()
+  } else {
+      charset.concat('')
+    writePassword()
+  return charsetnew; }
+}*/
 
 
 
@@ -27,12 +62,13 @@ function question () {
 //generate password
 function generatePassword() {
   var length = lengthpass,
-      charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' 
+      charset = charsetnew
       retVal = "";
   for (var i = 0, n = charset.length; i < length; ++i) {
       retVal += charset.charAt(Math.floor(Math.random() * n));
   }
   return retVal;
+  
 }
 
 
@@ -46,25 +82,8 @@ function writePassword() {
 
 }
 
-//function for including uppercase
-function uppercasechar () {
-  charuppercase ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  charset.append(charuppercase)
-
-}
-//function for including special characters
-function specialcharacter () {
-  charspecial ='!@#$%^&*()_'
-  charset.append(charspecial)
- 
-
-}
-
-//btnPmpt.addEventListener = ('click', writePassword)
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', question)
 
 
-//lengthpass.onclick =  writePassword()
-//generateBtn.addEventListener("click", lengthpass)
