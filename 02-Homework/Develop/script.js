@@ -5,55 +5,53 @@ var lowercase= 'abcdefghijklmnopqrstuvwxyz';
 var special = '!@#$%^&*()';
 var nums = '0123456789'
 
-var choices =['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz', '!@#$%^&*()', '0123456789'  ]
 
 
 function question () {
+    combo = special + uppercase + lowercase + nums
     lengthpass= parseInt(prompt('how many characters do you want your password to be'))
     specialQ = prompt('Do you want special characters? (y/n)')
     upper = prompt('do you want uppercase letters? (y/n)')
-    //lower = prompt('do you want lower case letters? (y/n)')
-    //numsQ = prompt('do you want numbers?')
-    // check for 
-    if (lengthpass >= 8 && lengthpass <= 128 && specialQ == 'y' && upper == 'y') {
-      charsetnew = nums + upper
-      writePassword() 
-      console.log(charsetnew)
+    lower = prompt('do you want lower case letters? (y/n)')
+    numsQ = prompt('do you want numbers?')
+    answer = specialQ + upper + lower + numsQ
+    noCheck = answer
+
+    if (answer.value == 'n') {
+      charsetnew = combo - nocheck(true)
+      writePassword()
     } 
-    else {
+    // check for 
+    if (lengthpass >= 8 && lengthpass <= 128 && specialQ == 'y' && upper == 'y' && lower == 'y' && numsQ == 'y') {
+      charsetnew = combo
+      writePassword()
+    } else if (lengthpass < 8 || lengthpass > 128) {
       prompt('invalid!')
+    } else if (specialQ == 'n' && upper == 'y' && lower == 'y' && numsQ == 'y') {
+      charsetnew = (combo - specialQ)
+    } else if (upper == 'n' && lower == 'y' && numsQ =='y' && specialQ == 'y') {
+      charsetnew = lowercase+ special + nums
+    } else if (lower =='n' && upper == 'y' && numsQ =='y' && specialQ == '') {
+      charsetnew = uppercase+special+nums
+    } else if (numsQ =='n') {
+      charsetnew= special + uppercase + lowercase
+    }//finish rest of else ifs 
+    
+      
+      //else if (answer.value == 'n') {
+    
+    console.log(noCheck)
+    
     }
     
-    /*if (specialchar == 'y') {
-      writePassword()
-    }else {
-      writePassword(), }*/
+    
+
 
         
   
-}
-    /*} else if (specialQ == 'y') { 
-      answers += answers.concat.choices[2]
-    } else if (upper == 'y') {
-      answers += answers.concat.choices[0]
-    } else if (lower == 'y') {
-      answers += answers.concat.choices[1]
-    } else if (numsQ == 'y'){
-      answers += answers.concat.choices[3]
-    } */
 
 
-//prompt('That password is invalid!') 
-/*function specialquestion () {
-  specialchar =prompt('would you like to add special characters? (y/n)')
-  if (specialchar == 'y'){
-    charsetnew=charset.concat(special)
-    writePassword()
-  } else {
-      charset.concat('')
-    writePassword()
-  return charsetnew; }
-}*/
+
 
 
 
